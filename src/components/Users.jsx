@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'antd';
-import Exel from './exel-export/Exel'
+import Exel from './exel-export/Exel';
+import VerticalBar from './VerticalBar'
 
 function Users() {
     // Вычисления
@@ -58,6 +59,17 @@ function Users() {
                 { field: 'phone', minWidth: 200 },
                 { field: 'website', minWidth: 200 },
             ]} />
+
+            <Exel itedUsers={[{ nickname: 'leo', breed: 'Сиамская' }, { nickname: 'Вася', breed: 'Кыринский' }]} myColumns={[
+                { field: 'nickname', minWidth: 200 },
+                { field: 'breed', minWidth: 200 },
+            ]} />
+
+            <VerticalBar names={['Сергей', "Петр", "Василий"]} ages={[12, 39, 75]} backColor={'green'} />
+
+            <VerticalBar names={['Mikle', "Jhon", "Alberto"]} ages={[27, 21, 45]} backColor={'yellow'} />
+
+            <VerticalBar names={['Mikle', "Jhon", "Alberto", 'Сергей', "Петр", "Василий"]} ages={[12, 39, 75, 27, 21, 45]} backColor={'yellow'} />
         </div>
     )
 }
